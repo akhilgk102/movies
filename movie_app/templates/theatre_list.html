@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{%block title%}Theatre Lists {%endblock%}
+
+
+{% block main_block %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            <h3 class="text-center my-4">Theatre Lists</h3>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover border shadow-sm">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col"><i class="bi bi-building"></i> Theatre Name</th>
+                            <th scope="col"><i class="bi bi-geo-alt"></i> Location</th>
+                            <th scope="col"><i class="bi bi-camera-reels"></i> Screen Type</th>
+                            <th scope="col"><i class="bi bi-volume-up"></i> Sound System</th>
+                            <th scope="col"><i class="bi bi-volume-up"></i> Seating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if list %}
+                            {% for theatre in list %}
+                                <tr>
+                                    <td>{{ theatre.name }}</td>
+                                    <td>{{ theatre.location }}</td>
+                                    <td>{{ theatre.screen_type }}</td>
+                                    <td>{{ theatre.sound_system }}</td>
+                                    <td>{{ theatre.seating }}</td>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="4" class="text-center">No Theatres available.</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{%extends "base.html"%}
+
+{%block title%} Add Reviews {%endblock%}
+
+
+{%block main_block%}
+<section class="wall">
+    <div class="container">
+        <div class="row p-5">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 border shadow rounded-4 p-5 glass text-white">
+                <h2 class="mt-2 text-center font-monospace">Give Movie Review</h2>
+                <form action="" method="post">
+                    {%csrf_token%}
+                    <div class="row">
+                        {{form.title.label_tag}}
+                        {{form.title}}
+                    </div>
+                    <div class="row">
+                        {{form.language.label_tag}}
+                        {{form.language}}
+                    </div>
+                    <div class="row">
+                        {{form.year.label_tag}}
+                        {{form.year}}
+                    </div>
+                    <div class="row">
+                        {{form.review.label_tag}}
+                        {{form.review}}
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                   
+                </form>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</section>
+{%endblock%}

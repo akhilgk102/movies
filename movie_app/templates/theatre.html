@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+
+{%block title%} Theatre {%endblock%}
+
+{%block main_block%}
+<section class="wall">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-10  p-5 border shadow rounded-4 mb-5 mt-5 glass text-white">
+                <form action="" method="post">
+                    {%csrf_token%}
+                    <div class="row">
+                        {{form.name.label_tag}}
+                        {{form.name}}
+                    </div>
+                    <div class="row">
+                        {{form.location.label_tag}}
+                        {{form.location}}
+                    </div>
+                    <div class="row">
+                        {{form.screen_type.label_tag}}
+                        {{form.screen_type}}
+                    </div>
+                    <div class="row">
+                        {{form.sound_system.label_tag}}
+                        {{form.sound_system}}
+                    </div>
+                    <div class="row">
+                        {{form.seating.label_tag}}
+                        {{form.seating}}
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{%endblock%}
